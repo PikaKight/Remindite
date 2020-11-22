@@ -37,13 +37,13 @@ def remindite():
                 json.dump(remindite,f)
 
         elif opt == 4:
-            reminder.Remind().rm_reminder(remindite, input("Catergory:"), input("Reminder:"), input("Date:"))
+            reminder.Remind().rm_reminder(remindite, input("Catergory:"), input("Reminder:"))
             
             with open("reminder.json", "w") as f:
                 json.dump(remindite,f)
         
         elif opt == 5:
-            reminder.Remind().change_date(remindite, input("Catergory:"), input("Reminder:"), input("Date:"), input("New Date:"))
+            reminder.Remind().change_date(remindite, input("Catergory:"), input("Reminder:"), input("New Date:"))
             
             with open("reminder.json", "w") as f:
                 json.dump(remindite,f)
@@ -89,6 +89,7 @@ def sign_up():
 
     login()
 
+
 def menu(): 
 
     on = True
@@ -114,6 +115,7 @@ def main():
         file = json.load(f)
     
     menu()
+
 
 if __name__ == "__main__":
     main()

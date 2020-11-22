@@ -13,7 +13,7 @@ class Remind:
     def add_reminder(self, reminder, category, remind, date):
        
         if remind not in reminder[category]:
-            reminder[category].append({remind: date})
+            reminder[category].append({"remind": remind, "date":date})
             return reminder
         else: return f"{remind} already exists"
     
@@ -24,22 +24,21 @@ class Remind:
             return reminder
         else: return f"{category} doesn't exists"
 
-    def rm_reminder(self, reminder, category, remind, date):
-        
-        if remind in reminder[category]:
-            for i in range(len(reminder[category])):
-                if reminder[category][i][remind] ==  date:
-                    del reminder[category][i]
-            return reminder
-        else: return f"{remind} don't exists"
-
-    def change_date(self, reminder, category, remind, date, new):
+    def rm_reminder(self, reminder, category, remind, ):
         
         for i in range(len(reminder[category])):
-           if reminder[category][i][remind] ==  date:
-               reminder[category][i][remind] = new 
-               return reminder
+            if reminder[category][i]["remind"] ==  remind:
+                del reminder[category][i]
+                return reminder
+        return f"{remind} don't exists"
 
-    
+    def change_date(self, reminder, category, remind, new):
+        
+        for i in range(len(reminder[category])):
+            if reminder[category][i]["remind"] ==  remind:
+                reminder[category][i]["date"] = new 
+                return reminder
+
+
 
 
