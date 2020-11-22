@@ -22,7 +22,7 @@ class Login:
         if username is user: return True
         else: return False
 
-    def check_password(self, password: int, user: List) -> bool:
+    def check_password(self, password: str, user: List) -> bool:
         if password in user: return True
         else: return False
 

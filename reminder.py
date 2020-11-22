@@ -29,18 +29,17 @@ class Remind:
         if remind in reminder[category]:
             for i in range(len(reminder[category])):
                 if reminder[category][i][remind] ==  date:
-                    del reminder[category][remind]
+                    del reminder[category][i]
             return reminder
         else: return f"{remind} don't exists"
 
     def change_date(self, reminder, category, remind, date, new):
         
         for i in range(len(reminder[category])):
-           if reminder[category][remind] ==  date:
-                reminder[category][i][remind] = new 
-                return reminder
+           if reminder[category][i][remind] ==  date:
+               reminder[category][i][remind] = new 
+               return reminder
 
-    def sort_by_date(self):
-        pass
+    
 
 
