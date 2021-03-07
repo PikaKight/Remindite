@@ -1,10 +1,10 @@
 
 from typing import List
 
-
 class Sign_up:
 
     def username(self,username: str) -> str:
+        
         self._username = username
         return self._username
 
@@ -30,4 +30,3 @@ class Login:
         if email in user: return True
         else: return False
         
-
